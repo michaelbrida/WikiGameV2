@@ -21,7 +21,7 @@
    <children>
       <Pane prefHeight="320.0" prefWidth="386.0">
          <children>
-            <Button fx:id="lgnbtn" layoutX="167.0" layoutY="239.0" mnemonicParsing="false" onAction="#buttonPressed" text="Login" />
+            <Button fx:id="lgnbtn" layoutX="167.0" layoutY="239.0" mnemonicParsing="false" onAction="#loginPressed" text="Login" />
             <TextField fx:id="usern" layoutX="119.0" layoutY="115.0" />
             <PasswordField fx:id="pswd" layoutX="119.0" layoutY="176.0" />
             <Text layoutX="86.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WikiGame - Login">
