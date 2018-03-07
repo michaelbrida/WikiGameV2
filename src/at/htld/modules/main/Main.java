@@ -10,11 +10,18 @@ import java.util.Date;
 
 public class Main extends Application {
 
+    Scene loginScene, launcherScene;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../fx/login.fxml"));
+        Parent loginRoot = FXMLLoader.load(getClass().getResource("../../fx/login.fxml"));
+        Parent laucherRoot = FXMLLoader.load(getClass().getResource("../../fx/launcher.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 500, 500));
+
+        loginScene = new Scene(loginRoot, 500,500);
+        launcherScene = new Scene(laucherRoot,500,500);
+
+        primaryStage.setScene(loginScene);
         primaryStage.show();
     }
 
