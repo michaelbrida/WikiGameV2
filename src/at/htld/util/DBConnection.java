@@ -26,7 +26,5 @@ public class DBConnection {
         conn = DriverManager.getConnection(sbBuilder.toString());
 
         return conn;
-
-
     }
 }
