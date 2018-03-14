@@ -77,6 +77,25 @@ public class DBHandler {
         Connection conn = connHelper.getConnection();
 
         ResultSet rset;
+        String username = ""; //Object.getusername
+
+        String password = "";
+
+        try {
+            pstmt = conn
+                    .prepareStatement("SELECT password AS pw FROM wikiuser WHERE username = ?");
+            pstmt.setString(1, username);
+
+            rset = pstmt.executeQuery();
+            if (rset.next()) {
+                password = rset.getString("pw");
+            }
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+            return password;
+        }
 
     }
 
