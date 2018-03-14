@@ -97,6 +97,8 @@ public class DBHandler {
             return password;
         }
 
+
+        return null;
     }
 
 

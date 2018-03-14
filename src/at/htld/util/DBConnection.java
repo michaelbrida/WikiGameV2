@@ -21,7 +21,9 @@ public class DBConnection {
         sbBuilder.append(DB_DATABASE_NAME).append("?user=")
                 .append(DB_USER_NAME).append("&password=")
                 .append(DB_USER_PASSWD)
-                .append("&useUnicode=true&characterEncoding=UTF-8");
+                .append("&useSSL=").append("false")
+                .append("&useUnicode=true&characterEncoding=UTF-8")
+                .append("&serverTimezone=").append("GMT");
 
         conn = DriverManager.getConnection(sbBuilder.toString());
 

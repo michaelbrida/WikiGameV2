@@ -1,5 +1,7 @@
 package at.htld.modules.main;
 
+import at.htld.modules.entity.User;
+import at.htld.modules.handler.DBHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,6 +29,15 @@ public class Main extends Application {
     
 
     public static void main(String[] args) {
+       /*
+        User u = new User();
+        u.setName("Husein");
+        u.setUserName("HUSEINJUSIC");
+        u.setPassword("$31$16$UG_DBP_Bvlz5pGrQQfAO11x85mT8bBA3Cx420B8tw6c");
+
+        DBHandler handler = new DBHandler();
+        handler.saveUser(u);
+        */
         launch(args);
     }
 }
