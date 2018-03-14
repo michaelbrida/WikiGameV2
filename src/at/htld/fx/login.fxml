@@ -19,7 +19,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="320.0" prefWidth="386.0">
+      <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
             <Button fx:id="lgnbtn" layoutX="167.0" layoutY="239.0" mnemonicParsing="false" onAction="#loginPressed" text="Login" />
             <TextField fx:id="usern" layoutX="119.0" layoutY="115.0" />
