@@ -1,5 +1,6 @@
 package at.htld.modules.handler;
 
+import at.htld.modules.entity.User;
 import at.htld.util.DBConnection;
 import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 
@@ -13,14 +14,14 @@ import java.util.UUID;
 public class DBHandler {
 
     //User object
-    public boolean addUser() throws SQLException {
+    public boolean addUser(User user) throws SQLException {
         DBConnection connHelper = new DBConnection();
         PreparedStatement pstmt;
         Connection conn = connHelper.getConnection();
 
-        String username = ""; //Object.getusername
-        String password = ""; //Opbject.getpassword
-        String name = ""; //Object.getname
+        String username = user.getUserName(); //Object.getusername
+        String password = user.getPassword(); //Opbject.getpassword
+        String name = user.getName(); //Object.getname
 
         int temp = userExists(username);
         boolean bool = true;
@@ -71,14 +72,12 @@ public class DBHandler {
     }
 
     //user object
-    public String userPassword() throws SQLException {
+    public String userPassword(String username) throws SQLException {
         DBConnection connHelper = new DBConnection();
         PreparedStatement pstmt;
         Connection conn = connHelper.getConnection();
 
         ResultSet rset;
-        String username = ""; //Object.getusername
-
         String password = "";
 
         try {
