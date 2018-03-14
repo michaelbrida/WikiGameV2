@@ -32,6 +32,7 @@
             <Text layoutX="119.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text layoutX="119.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <ProgressIndicator layoutX="284.0" layoutY="232.0" progress="0.0" />
+            <Button layoutX="13.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="360.0" onAction="#registerPressed" text="Register" />
          </children>
       </Pane>
    </children>

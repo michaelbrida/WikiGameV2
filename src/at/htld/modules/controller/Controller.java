@@ -1,17 +1,28 @@
 package at.htld.modules.controller;
 
+import at.htld.modules.entity.User;
+import at.htld.modules.handler.DBHandler;
 import at.htld.util.PasswordAuthentication;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Logger;
 
 
 public class Controller {
+
+    private DBHandler dbHandler = new DBHandler();
+    private User u;
+    private PasswordAuthentication pA;
 
     @FXML
     TextField usern;
@@ -23,15 +34,40 @@ public class Controller {
 
     @FXML
     protected void loginPressed() throws IOException {
-        PasswordAuthentication passwordAuthentication = new PasswordAuthentication();
-        String hash = passwordAuthentication.hash(pswd.getText());
-        System.out.println(hash);
+       /*
+        try {
+            u = dbHandler.getUserByUserName(usern.getText());
+            pA = new PasswordAuthentication();
 
-        if(passwordAuthentication.authenticate(pswd.getText(),"$31$16$webxL-84MGkVX-PQnm4TMBL1KXh0W_rjNKajxVH6MAs")){
-            System.out.println("RICHTIG");
+
+            if(pA.authenticate(pswd.getText().toCharArray(),u.getPassword())){
+                System.out.println("RICHTIG");
+            }
+            else{
+                System.out.println("falsch");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        else{
-            System.out.println("falsch");
+        */
+    }
+
+    @FXML
+    protected void registerPressed(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../../fx/register.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("New Window");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+
         }
     }
 
