@@ -25,11 +25,9 @@ public class Main extends Application {
         primaryStage.setTitle("Wiki Game");
 
         loginScene = new Scene(loginRoot, 500,500);
-        launcherScene = new Scene(laucherRoot,1280,720);
-        registerScene = new Scene(registerRoot, 400, 500);
 
 
-        primaryStage.setScene(launcherScene);
+        primaryStage.setScene(loginScene);
         primaryStage.show();
     }
     
