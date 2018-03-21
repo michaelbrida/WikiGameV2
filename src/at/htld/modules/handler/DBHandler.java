@@ -31,8 +31,8 @@ public class DBHandler {
                 pstmt = conn
                         .prepareStatement("INSERT INTO wikiuser (username, name, password) VALUE (?, ?, ?)");
                 pstmt.setString(1, username);
-                pstmt.setString(2, password);
-                pstmt.setString(3, name);
+                pstmt.setString(2, name);
+                pstmt.setString(3, password);
                 pstmt.execute();
                 return bool;
             } finally {

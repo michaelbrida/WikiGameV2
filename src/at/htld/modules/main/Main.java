@@ -2,12 +2,14 @@ package at.htld.modules.main;
 
 import at.htld.modules.entity.User;
 import at.htld.modules.handler.DBHandler;
+import at.htld.util.PasswordAuthentication;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Main extends Application {
@@ -29,21 +31,23 @@ public class Main extends Application {
         registerScene = new Scene(registerRoot, 400, 500);
 
 
-        primaryStage.setScene(registerScene);
+        primaryStage.setScene(loginScene);
         primaryStage.show();
     }
     
 
-    public static void main(String[] args) {
-       /*
+    public static void main(String[] args) throws SQLException {
+
         User u = new User();
-        u.setName("Husein");
-        u.setUserName("HUSEINJUSIC");
-        u.setPassword("$31$16$UG_DBP_Bvlz5pGrQQfAO11x85mT8bBA3Cx420B8tw6c");
+        PasswordAuthentication ps = new PasswordAuthentication();
+        u.setName("Ermin");
+        u.setUserName("ermin");
+
+        u.setPassword(ps.hash("lol"));
 
         DBHandler handler = new DBHandler();
-        handler.saveUser(u);
-        */
+        handler.addUser(u);
+
         launch(args);
     }
 }

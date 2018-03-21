@@ -34,12 +34,12 @@ public class Controller {
 
     @FXML
     protected void loginPressed() throws IOException {
-       /*
+
         try {
-            u = dbHandler.getUserByUserName(usern.getText());
+            u = dbHandler.getUser(usern.getText());
             pA = new PasswordAuthentication();
 
-
+            System.out.println(pswd.getText());
             if(pA.authenticate(pswd.getText().toCharArray(),u.getPassword())){
                 System.out.println("RICHTIG");
             }
@@ -49,7 +49,6 @@ public class Controller {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        */
     }
 
     @FXML
