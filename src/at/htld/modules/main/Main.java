@@ -12,18 +12,24 @@ import java.util.Date;
 
 public class Main extends Application {
 
-    Scene loginScene, launcherScene;
+    Scene loginScene, launcherScene, registerScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        setUserAgentStylesheet(STYLESHEET_MODENA);
+
         Parent loginRoot = FXMLLoader.load(getClass().getResource("../../fx/login.fxml"));
         Parent laucherRoot = FXMLLoader.load(getClass().getResource("../../fx/launcher.fxml"));
-        primaryStage.setTitle("Hello World");
+        Parent registerRoot = FXMLLoader.load(getClass().getResource("../../fx/register.fxml"));
+        primaryStage.setTitle("Wiki Game");
 
         loginScene = new Scene(loginRoot, 500,500);
-        launcherScene = new Scene(laucherRoot,500,500);
+        launcherScene = new Scene(laucherRoot,1280,720);
+        registerScene = new Scene(registerRoot, 400, 500);
 
-        primaryStage.setScene(loginScene);
+
+        primaryStage.setScene(registerScene);
         primaryStage.show();
     }
     
