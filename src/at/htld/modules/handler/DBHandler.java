@@ -4,6 +4,7 @@ import at.htld.modules.entity.User;
 import at.htld.util.DBConnection;
 import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -95,6 +96,34 @@ public class DBHandler {
             }
             return password;
         }
+    }
+
+    public User getUser(String username) throws SQLException {
+        User u = new User();
+
+        DBConnection connHelper = new DBConnection();
+        PreparedStatement pstmt;
+        Connection conn = connHelper.getConnection();
+
+        ResultSet rset;
+        try {
+            pstmt = conn
+                    .prepareStatement("SELECT username AS usrn, password AS pw, name AS nm FROM wikiuser WHERE username = ?");
+            pstmt.setString(1, username);
+
+            rset = pstmt.executeQuery();
+            if (rset.next()) {
+                u.setUserName(rset.getString("usrn"));
+                u.setPassword(rset.getString("pw"));
+                u.setName(rset.getString("nm"));
+            }
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+
+        return u;
     }
 
 
