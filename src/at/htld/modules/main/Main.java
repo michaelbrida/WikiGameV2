@@ -2,12 +2,14 @@ package at.htld.modules.main;
 
 import at.htld.modules.entity.User;
 import at.htld.modules.handler.DBHandler;
+import at.htld.util.PasswordAuthentication;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Main extends Application {
@@ -25,6 +27,8 @@ public class Main extends Application {
         primaryStage.setTitle("Wiki Game");
 
         loginScene = new Scene(loginRoot, 500,500);
+        launcherScene = new Scene(laucherRoot,1280,720);
+        registerScene = new Scene(registerRoot, 400, 500);
 
 
         primaryStage.setScene(loginScene);
@@ -32,8 +36,8 @@ public class Main extends Application {
     }
     
 
-    public static void main(String[] args) {
-       /*
+    public static void main(String[] args) throws SQLException {
+
         User u = new User();
         u.setName("Husein");
         u.setUserName("HUSEINJUSIC");
