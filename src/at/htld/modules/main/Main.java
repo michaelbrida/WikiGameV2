@@ -27,7 +27,7 @@ public class Main extends Application {
         registerScene = new Scene(registerRoot, 400, 500);
 
 
-        primaryStage.setScene(launcherScene);
+        primaryStage.setScene(registerScene);
         primaryStage.show();
     }
     
