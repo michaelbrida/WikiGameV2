@@ -21,5 +21,10 @@ create table statistics(
     Foreign key (username_FK) references wikiuser(username)
 );
 
-
+create table words(
+	id int auto_increment,
+    start_word varchar(255) not null,
+    end_word varchar(255) not null,
+    primary key(id)
+);
 
